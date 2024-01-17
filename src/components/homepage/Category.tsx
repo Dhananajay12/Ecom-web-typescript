@@ -12,6 +12,7 @@ const Category = () => {
 					<p className='lg:text-[70px]'>Simply Unique</p>
 					<p className='lg:text-[70px]'>Simply Better</p>
 				</div>
+				
 				<div className='text-center '>
 					<p className='lg:text-lg p-20 text-[#787878]'>3legant is a gift & decorations store based in HCMC, Vietnam. Est since 2019.</p>
 				</div>
