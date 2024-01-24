@@ -14,10 +14,10 @@ const Navbar = () => {
 			<div className="container mx-auto flex justify-between items-center">
 				<h1 className=" text-3xl font-bold text-[#121212]">3legant</h1>
 				<div className="lg:flex hidden">
-					<NavLink to="/" className={({ isActive, isPending }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' :'text-[#898989] text-lg  font-light mr-8'}  >Home</NavLink>
-					<NavLink to="/shop" className={({ isActive, isPending }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Shop</NavLink>
-					<NavLink to="/product" className={({ isActive, isPending }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >About Us</NavLink>
-					<NavLink to="/contact-us" className={({ isActive, isPending }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Contact Us</NavLink>
+					<NavLink to="/" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'}  >Home</NavLink>
+					<NavLink to="/shop" className={({ isActive  }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Shop</NavLink>
+					<NavLink to="/about-us" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >About Us</NavLink>
+					<NavLink to="/contact-us" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Contact Us</NavLink>
 				</div>
 				<div
 					className={`lg:hidden lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'
@@ -31,8 +31,12 @@ const Navbar = () => {
 
 				<div className='flex'>
 					<Search size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
-					<ShoppingCart size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
-					<CircleUserRound size={28} strokeWidth={1.5} className='text-[#3d3d3d]' />
+					<NavLink to="/cart" >
+						<ShoppingCart size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
+					</NavLink>
+					<NavLink to="/profile" >
+						<CircleUserRound size={28} strokeWidth={1.5} className='text-[#3d3d3d]' />
+					</NavLink>
 					<div className="lg:hidden">
 						<button
 							onClick={toggleNavbar}

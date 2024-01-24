@@ -4,9 +4,9 @@ import { lazy } from "react"
 
 const Home = lazy(() => import('../pages/Home'))
 const Shop = lazy(() => import('../pages/Shop'))
-const AboutUs = lazy(() => import('../pages/Home'))
+const AboutUs = lazy(() => import('../pages/AboutUs'))
+const ContactUs = lazy(() => import('../pages/ContactUs'))
 const Cart = lazy(() => import('../pages/Cart'))
-
 
 
 const coreRouter = [
@@ -30,10 +30,17 @@ const coreRouter = [
 	},
 	{
 		path: '/about-us',
-		title: 'about us',
+		title: 'About-Us',
 		component: AboutUs,
 		prot: false,
 	},
+	{
+		path: '/contact-us',
+		title: 'Contact-Us',
+		component: ContactUs,
+		prot: false,
+	},
+
 ]
 
 const router = [...coreRouter];

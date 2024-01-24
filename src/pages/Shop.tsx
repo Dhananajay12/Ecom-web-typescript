@@ -49,7 +49,7 @@ const Shop = () => {
 					<div className='mt-10'>
 						<p className='text-xl font-bold mt-4'>PRICE</p>
 						<input type="range" min="0" className='w-[70%]' max="100000" value={range} onChange={(e) => setRange(parseInt(e.target.value))} step="0.5" />
-						<p> 0 to {range} </p>
+						<p>  ₹0 to  ₹{range} </p>
 						{/* <p className='text-md mt-4 text-gray-400'>Filter</p>
 						<p className='text-md mt-1 text-gray-400'>Filter<s/p>
 						<p className='text-md  mt-1 text-gray-400'>Fislter</p> */}
