@@ -2,9 +2,11 @@ import { lazy } from "react"
 // import ThankYouPage from "../pages/ThankYouPage.jsx"
 
 
-const Home = lazy(() => import('../pages/Home.jsx'))
-const Shop = lazy(() => import('../pages/Shop.js'))
-const AboutUs = lazy(() => import('../pages/Home.jsx'))
+const Home = lazy(() => import('../pages/Home'))
+const Shop = lazy(() => import('../pages/Shop'))
+const AboutUs = lazy(() => import('../pages/Home'))
+const Cart = lazy(() => import('../pages/Cart'))
+
 
 
 const coreRouter = [
@@ -18,6 +20,12 @@ const coreRouter = [
 		path: '/shop',
 		title: 'shop',
 		component: Shop,
+		prot: false,
+	},
+	{
+		path: '/cart',
+		title: 'cart',
+		component: Cart,
 		prot: false,
 	},
 	{
