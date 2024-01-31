@@ -23,17 +23,17 @@ const OtherHome = () => {
 
 	return (
 		<>
-			<div className='container mx-auto mt-10'>
-				<div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-3'>
-					<div className='p-10 bg-[#eaeaea] rounded-lg'>
+			<div className='container mx-auto mt-10 p-0'>
+				<div className='grid grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-3'>
+					<div className='p-5 md:p-10 bg-[#eaeaea] rounded-lg'>
 						<Truck strokeWidth={1.25} size={50} />
 						<div className='mt-5'>
-							<p>Free Shipping</p>
+							<p className=''>Free Shipping</p>
 							<p className='text-[#8d8d8d] mt-1'>Order above $200</p>
 						</div>
 					</div>
 
-					<div className='p-10 bg-[#eaeaea] rounded-lg' >
+					<div className='p-5 md:p-10 bg-[#eaeaea] rounded-lg' >
 						<Wallet strokeWidth={1.25} size={50} />
 						<div className='mt-5'>
 							<p>Money-back</p>
@@ -41,7 +41,7 @@ const OtherHome = () => {
 						</div>
 					</div>
 
-					<div className='p-10 bg-[#eaeaea] rounded-lg' >
+					<div className='p-5 md:p-10 bg-[#eaeaea] rounded-lg' >
 
 						<LockKeyhole strokeWidth={1.25} size={50} />
 						<div className='mt-5'>
@@ -50,7 +50,7 @@ const OtherHome = () => {
 						</div>
 					</div>
 
-					<div className='p-10 bg-[#eaeaea] rounded-lg' >
+					<div className='p-5 md:p-10 bg-[#eaeaea] rounded-lg' >
 
 						<Phone strokeWidth={1.25} size={50} />
 						<div className='mt-5'>
@@ -62,7 +62,7 @@ const OtherHome = () => {
 				</div>
 			</div>
 			<br></br>
-			<div className='grid grid-cols-1 lg:grid-cols-2 mt-20'>
+			{/* <div className='grid grid-cols-1 lg:grid-cols-2 mt-20'>
 				<div>
 					<img src={img} alt="error" className='w-full' />
 				</div>
@@ -107,7 +107,7 @@ const OtherHome = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 	
 		</>
 	)

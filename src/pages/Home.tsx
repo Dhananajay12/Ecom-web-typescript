@@ -5,12 +5,14 @@ import SliderHome from '../components/homepage/SliderHome'
 
 const Home = () => {
 	return (
-		<div>
+		<>
 			<Banner />
-			<Category />
-			<SliderHome />
-			<OtherHome />
-		</div>
+			<div className='px-3 md:px-0'>
+				<Category />
+				<SliderHome />
+				<OtherHome />
+			</div>
+		</>
 	)
 }
 

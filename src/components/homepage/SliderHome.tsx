@@ -21,18 +21,17 @@ function StarRating() {
 }
 const SliderHome = () => {
 	return (
-		<div className='container mt-10' >
+		<div className='container mt-10  lg:px-10' >
 			<div className='flex justify-between '>
-				<p className='text-[35px]'>New Arrivals</p>
-				<p className='flex mt-5' style={{borderBottom:'1px solid black'}}>More Products <MoveRight className='mx-2 ' /></p>
-
+				<p className='text-xl lg:text-[35px]'>New Arrivals</p>
+				<p className='flex mt-1 lg:mt-5 text-[13px]' style={{borderBottom:'1px solid black'}}>More Products <MoveRight className='mx-2 ' /></p>
 			</div>
 
 			<Carousel
 				opts={{
 					align: "start",
 				}}
-				className="w-full mt-5 mb-4"
+				className="w-[95%] lg:w-full mt-5 mb-4 ml-[6px]"
 			>
 				<CarouselContent>
 					{Array.from({ length: 8 }).map((_, index) => (
