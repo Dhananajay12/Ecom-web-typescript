@@ -10,7 +10,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className=" p-6 ">
+		<div className=" py-5 md:p-6 ">
 			<div className="container mx-auto flex justify-between items-center">
 				<h1 className=" text-3xl font-bold text-[#121212]">3legant</h1>
 				<div className="lg:flex hidden">

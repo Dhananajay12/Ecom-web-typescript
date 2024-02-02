@@ -23,12 +23,12 @@ const Shop = () => {
 
 	return (
 		<>
-			<div className='container flex relative items-center justify-center'>
+			<div className='md:container flex relative items-center justify-center'>
 				<img src={img1} alt='error' className='w-full' />
 				<div className='text-center absolute'>
-					<p className='text-xl text-gray-500'>Home  <span className='text-black'> {">"} Shop</span></p>
-					<p className='text-3xl md:text-[50px] mt-5'>Shop Page</p>
-					<p className='text-xl mt-10'>Let’s design the place you always imagined.</p>
+					<p className='text-md   md:text-xl text-gray-500'>Home  <span className='text-black'> {">"} Shop</span></p>
+					<p className='text-lg mt-2 md:text-3xl md:text-[50px] md:mt-5'>Shop Page</p>
+					<p className='text-sm mt-3 md:text-xl md:mt-10 '>Let’s design the place you always imagined.</p>
 
 				</div>
 			</div>

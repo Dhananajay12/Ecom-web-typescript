@@ -9,7 +9,7 @@ const DefualtLayout = () => {
 			<main >
 				<Outlet />
 			</main>
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	)
 }
