@@ -8,6 +8,8 @@ const AboutUs = lazy(() => import('../pages/AboutUs'))
 const ContactUs = lazy(() => import('../pages/ContactUs'))
 const Cart = lazy(() => import('../pages/Cart'))
 const Checkout = lazy(() => import('../pages/Checkout'))
+const SelectAddress = lazy(() => import('../pages/SelectAddress'))
+
 
 
 
@@ -36,6 +38,12 @@ const coreRouter = [
 		path: '/checkout',
 		title: 'checkout',
 		component: Checkout,
+		prot: false,
+	},
+	{
+		path: '/select-address',
+		title: 'select-address',
+		component: SelectAddress,
 		prot: false,
 	},
 	{

@@ -14,25 +14,24 @@ const Cart = () => {
 				<br></br>
 				<br></br>
 				<div className='grid grid-cols-3 mt-5 md:mt-20'>
-					<div className='col-span-3 md:col-span-2'>
+					<div className='col-span-3 md:col-span-2 px-4'>
 						<table style={{ width: "100%" }}>
-							<tr>
+							<tr className=''>
 								<th>Product</th>
 								<th>Quantity</th>
 								<th>Price</th>
 								<th>Subtotal</th>
 							</tr>
+
 							<br></br>
 							<br></br>
 							<tr className='mt-4'>
 								<td className='flex  justify-center s'>
 									<img src={img} alt="error" className='w-[100px] rounded' />
-
 								</td>
 								<td><div> - 1 + </div></td>
 								<td>$199</td>
 								<td>$999</td>
-
 							</tr>
 							<br></br>
 							<tr className='mt-4'>
@@ -61,14 +60,22 @@ const Cart = () => {
 							<div className=' font-bold text-xl '>Cart summary</div>
 							<div className='flex justify-between mt-10'>
 								<p>Subtotal</p>
-								<p>$1213.00</p></div>
+								<p>₹1213.00</p></div>
 							<div className='flex justify-between mt-5'>
 								<p>Shipping Charges</p>
-								<p>$1213.00</p>
+								<p>₹1213.00</p>
 							</div>
-							<button className='bg-[#121212] text-white mt-10 px-10 p-2 w-full rounded' >Checkout</button>
+							<div className='flex justify-between mt-5 '>
+								<p className='text-green-600'>Discount</p>
+								<p className='text-green-600'>-₹13.00</p>
+							</div>
+							<p className='mt-4 border-b border-gray-500'></p>
+							<div className='flex justify-between mt-5'>
+								<p >Total</p>
+								<p>₹213.00</p>
+							</div>
+							<button className='bg-[#121212] text-white mt-6 px-10 p-2 w-full rounded' >Checkout</button>
 						</div>
-
 					</div>
 				</div>
 			</div>
