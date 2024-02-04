@@ -13,7 +13,8 @@ const Cart = () => {
 				<StepsForBuy />
 				<br></br>
 				<br></br>
-				<div className='grid grid-cols-3 mt-5 md:mt-20'>
+
+				<div className='grid grid-cols-3 mt-5 md:mt-10'>
 					<div className='col-span-3 md:col-span-2 px-4'>
 						<table style={{ width: "100%" }}>
 							<tr className=''>
@@ -45,14 +46,14 @@ const Cart = () => {
 						</table>
 					</div>
 					<div className='col-span-3 md:col-span-1   '>
-						<div className=''>
+						<div className='mt-10 md:mt-0'>
 							<p className='flex font-bold'>Have a coupon?</p>
-							<p className='flex text-gray-500 mt-2'>Add your cade for an instant cart discount</p>
+							<p className='flex text-gray-500 mt-2 '>Add your cade for an instant cart discount</p>
 							<div>
-								<div className='mt-7 flex p-2 min-w-[400px] rounded' style={{ border: '1px solid #808080' }}>
+								<div className='mt-7 flex p-2  rounded' style={{ border: '1px solid #808080' }}>
 									<BadgePercent size={33} strokeWidth={1.25} className='text-[#808080]' />
 									<input placeholder='Coupon code' className='mr-5 p-1 px-4 rounded-md border border-none border-gray-300 focus:border-none outline-none  ' />
-									<p className='mt-1 ml-20 text-[#808080] '>Submit</p>
+									<p className='mt-1 ml-[-20px] md:ml-20 text-[#808080] '>Submit</p>
 								</div>
 							</div>
 						</div>
