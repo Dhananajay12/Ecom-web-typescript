@@ -11,7 +11,7 @@ import { productData } from '../../data/productData'
 import { product } from '../../model/productModel'
 import { Link } from 'react-router-dom'
 
-function StarRating({ starNumber }: any) {
+export function StarRating({ starNumber }: any) {
 	const stars = [];
 
 
