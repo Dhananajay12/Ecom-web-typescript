@@ -8,14 +8,14 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/swiper-bundle.css';
-
 import item from '../images/bed.png'
 import item2 from '../images/Banner.png'
 import SwiperCore from "swiper";
 import { EffectFade, Navigation, FreeMode, Pagination, Thumbs } from 'swiper/modules';
 
 import { Heart } from 'lucide-react';
-import { StarRating } from '../components/homepage/SliderHome';
+import SliderHome, { StarRating } from '../components/homepage/SliderHome';
+import Review from '../components/reviewComponents/Review';
 
 // SwiperCore.use([FreeMode, Navigation, Thumbs, EffectFade, Pagination]);
 
@@ -36,7 +36,7 @@ const SingleProduct = () => {
 			<div className=' grid grid-cols-2 mt-5'>
 
 				<div className='mx-5 mt-5'>
-					{/* <img src={product?.img} style={{ minWidth: '100%' }}></img> */}
+
 					<Swiper
 						loop={true}
 						spaceBetween={10}
@@ -46,12 +46,6 @@ const SingleProduct = () => {
 						className="mySwiper2"
 					>
 						<SwiperSlide>
-							<img src={item} className='w-full'/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src={item2} className='w-full' />
-						</SwiperSlide>
-						<SwiperSlide>
 							<img src={item} className='w-full' />
 						</SwiperSlide>
 						<SwiperSlide>
@@ -60,7 +54,13 @@ const SingleProduct = () => {
 						<SwiperSlide>
 							<img src={item} className='w-full' />
 						</SwiperSlide>
-	
+						<SwiperSlide>
+							<img src={item2} className='w-full' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src={item} className='w-full' />
+						</SwiperSlide>
+
 					</Swiper>
 					<Swiper
 						// onSwiper={setThumbsSwiper}
@@ -88,11 +88,11 @@ const SingleProduct = () => {
 							<img src={item} className='w-full' />
 						</SwiperSlide>
 					</Swiper>
-					
+
 				</div>
 				<div className='mx-5 mt-5'>
 					<div className='flex'>
-					<StarRating starNumber={product?.star} />
+						<StarRating starNumber={product?.star} />
 						<p className='mt-2 mx-2 text-[#6C7275]'>11 review</p>
 					</div>
 					<p className='font-bold  mt-2 text-[30px]'>{product?.name}</p>
@@ -145,6 +145,15 @@ const SingleProduct = () => {
 
 				</div>
 
+			</div>
+			<br></br>
+			<br></br>
+			<div className='mt-10'>
+				<SliderHome />
+			</div>
+			<br></br>
+			<div>
+				<Review />
 			</div>
 		</div>
 	)

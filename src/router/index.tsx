@@ -10,6 +10,8 @@ const Cart = lazy(() => import('../pages/Cart'))
 const Checkout = lazy(() => import('../pages/Checkout'))
 const SelectAddress = lazy(() => import('../pages/SelectAddress'))
 const SingleProductPage = lazy(() => import('../pages/SingleProduct'))
+const Blog = lazy(() => import('../pages/Blog'))
+
 
 
 
@@ -63,6 +65,12 @@ const coreRouter = [
 		path: '/contact-us',
 		title: 'Contact-Us',
 		component: ContactUs,
+		prot: false,
+	},
+	{
+		path: '/blog',
+		title: 'Blog',
+		component: Blog,
 		prot: false,
 	},
 

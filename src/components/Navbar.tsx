@@ -17,7 +17,7 @@ const Navbar = () => {
 					<NavLink to="/" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'}  >Home</NavLink>
 					<NavLink to="/shop" className={({ isActive  }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Shop</NavLink>
 					<NavLink to="/about-us" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >About Us</NavLink>
-					<NavLink to="/contact-us" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Contact Us</NavLink>
+					<NavLink to="/blog" className={({ isActive }) => isActive ? 'text-[#3d3d3d] text-lg  font-light mr-8' : 'text-[#898989] text-lg  font-light mr-8'} >Blog</NavLink>
 				</div>
 				<div
 					className={`lg:hidden lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'
