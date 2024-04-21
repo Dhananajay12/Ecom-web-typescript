@@ -11,7 +11,7 @@ const Checkout = lazy(() => import('../pages/Checkout'))
 const SelectAddress = lazy(() => import('../pages/SelectAddress'))
 const SingleProductPage = lazy(() => import('../pages/SingleProduct'))
 const Blog = lazy(() => import('../pages/Blog'))
-
+const Login = lazy(() => import('../pages/Login'))
 
 
 
@@ -73,7 +73,12 @@ const coreRouter = [
 		component: Blog,
 		prot: false,
 	},
-
+	{
+		path: '/login',
+		title: 'Login',
+		component: Login,
+		prot: false,
+	},
 ]
 
 const router = [...coreRouter];

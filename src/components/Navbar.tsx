@@ -34,7 +34,7 @@ const Navbar = () => {
 					<NavLink to="/cart" >
 						<ShoppingCart size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
 					</NavLink>
-					<NavLink to="/profile" >
+					<NavLink to="/login" >
 						<CircleUserRound size={28} strokeWidth={1.5} className='text-[#3d3d3d]' />
 					</NavLink>
 					<div className="lg:hidden">
