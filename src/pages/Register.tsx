@@ -17,8 +17,14 @@ const Register = () => {
 				</div>
 				<div className='flex'>
 					<UserPlus className='icon-style-login' />
+					<input type='text' placeholder='name' className='input-style-login'></input>
+				</div>
+
+				<div className='flex'>
+					<UserPlus className='icon-style-login' />
 					<input type='email' placeholder='email' className='input-style-login'></input>
 				</div>
+				
 				<div className='flex'>
 					<KeyRound className='icon-style-login' />
 					<div className='flex w-100'>
@@ -28,7 +34,15 @@ const Register = () => {
 						</div>
 					</div>
 				</div>
-
+				<div className='flex'>
+					<KeyRound className='icon-style-login' />
+					<div className='flex w-100'>
+						<input className='input-style-login' type={isShow ? 'text' : 'password'} placeholder='confirm password'></input>
+						<div className='password-show' onClick={() => setIsShow(!isShow)}>
+							{isShow ? <Eye /> : <EyeOff />}
+						</div>
+					</div>
+				</div>
 				<button className='sub-button'>Submit</button>
 			</div>
 
