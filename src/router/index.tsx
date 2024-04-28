@@ -12,6 +12,8 @@ const SelectAddress = lazy(() => import('../pages/SelectAddress'))
 const SingleProductPage = lazy(() => import('../pages/SingleProduct'))
 const Blog = lazy(() => import('../pages/Blog'))
 const Login = lazy(() => import('../pages/Login'))
+const Register = lazy(() => import('../pages/Register'))
+
 
 
 
@@ -77,6 +79,12 @@ const coreRouter = [
 		path: '/login',
 		title: 'Login',
 		component: Login,
+		prot: false,
+	},
+	{
+		path: '/register',
+		title: 'Register',
+		component: Register,
 		prot: false,
 	},
 ]

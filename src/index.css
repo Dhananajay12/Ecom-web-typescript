@@ -15,8 +15,13 @@ body {
 	border: 1px solid #121212;
 	padding: 25px 10px;
 	height: 50px;
-	margin-top: 1rem;
-	min-width: 20rem !important;
+	margin-top: 1.5rem;
+	border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	width: 100% !important;
+}
+.w-100{
+	width: 100%;
 }
 
 .icon-style-login {
@@ -24,16 +29,19 @@ body {
 	border-right: none;
 	height: 52px;
 	padding: 10px 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	min-width: 2rem;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 }
 
 .password-show {
 	float: right;
-	margin-left: -30px;
-	margin-top: 29px;
+	margin-left: -33px;
+	margin-top: 37px;
 	position: relative;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .sub-button{
@@ -41,13 +49,13 @@ body {
 	width: 100%;
 	color: white;
 	border-radius: 5px;
-	margin-top: 1rem;
+	margin-top: 2rem;
+	padding: 10px;
 }
 .link-login{
 	background: #121212;
 	width: 100%;
 	text-align: center;
-	margin: 0.2rem;
 	padding: 10px;
 	border-radius: 5px;
 	color: white;

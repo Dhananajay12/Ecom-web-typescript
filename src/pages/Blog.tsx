@@ -1,5 +1,5 @@
 import { Calendar, CircleUserRound } from 'lucide-react'
-import React from 'react'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Blog = () => {
 	return (
@@ -20,8 +20,11 @@ const Blog = () => {
 					</div>
 				</div>
 				<div className='mt-5'>
-
-					<img src="src/images/blog-page/chairs.jpg" className='w-full rounded' />
+					<LazyLoadImage src="src/images/blog-page/chairs.jpg"
+						alt="Image Alt"
+						className='w-full rounded'
+					/>
+			
 				</div>
 			</div>
 			<div>
@@ -33,10 +36,18 @@ const Blog = () => {
 
 				<div className='grid grid-cols-2 mt-4'>
 					<div className='p-1 '>
-						<img src="src/images/blog-page/kitchen.jpg" className='w-full rounded' />
+						<LazyLoadImage src="src/images/blog-page/kitchen.jpg"
+							alt="Image Alt"
+							className='w-full rounded'
+						/>
+						
 					</div>
 					<div className='p-1 '>
-						<img src="src/images/blog-page/kitchen-1.jpg" className='w-full rounded' />
+						<LazyLoadImage src="src/images/blog-page/kitchen-1.jpg"
+							alt="Image Alt"
+							className='w-full rounded'
+						/>
+						
 					</div>
 				</div>
 				<div className='mt-2'>
@@ -54,7 +65,11 @@ const Blog = () => {
 			</div>
 			<div className='grid grid-cols-2 mt-4'>
 				<div className=''>
-					<img className='rounded h-[800px] w-full' src='src/images/blog-page/chair-1.jpg' />
+					<LazyLoadImage src="src/images/blog-page/chair-1.jpg"
+						alt="Image Alt"
+						className='rounded max-h-[800px] w-full'
+					/>
+				
 				</div>
 				<div className='px-4'>
 					<p className='mt-2 font-bold text-[20px]'>An ecosystem of towels</p>
@@ -71,17 +86,29 @@ const Blog = () => {
 				</div>
 				<div className='grid grid-cols-3  mt-5'>
 					<div className='p-1'>
-						<img className='h-[400px] w-full rounded' src="src/images/blog-page/table-1.jpg" />
+						<LazyLoadImage src="src/images/blog-page/table-1.jpg"
+							alt="Image Alt"
+							className='h-[400px] w-full rounded'
+						/>
+
 						<p className='mt-4  font-semibold'>Modern texas home is beautiful and completely kid-friendly</p>
 						<p className='mt-2 text-[#545454]'>October 16, 2023</p>
 					</div>
 					<div className='p-1 '>
-						<img className='h-[400px] w-full rounded' src="src/images/blog-page/table-2.jpg" />
+						<LazyLoadImage src="src/images/blog-page/table-2.jpg"
+							alt="Image Alt"
+							className='h-[400px] w-full rounded'
+						/>
+					
 						<p className='mt-4  font-semibold'>Modern texas home is beautiful and completely kid-friendly</p>
 						<p className='mt-2 text-[#545454]'>October 16, 2023</p>
 					</div>
 					<div className='p-1'>
-						<img className='h-[400px] w-full rounded' src="src/images/blog-page/table-3.jpg" />
+						<LazyLoadImage src="src/images/blog-page/table-3.jpg"
+							alt="Image Alt"
+							className='h-[400px] w-full rounded'
+						/>
+				
 						<p className='mt-4 font-semibold'>Modern texas home is beautiful and completely kid-friendly</p>
 						<p className='mt-2 text-[#545454]'>October 16, 2023</p>
 					</div>

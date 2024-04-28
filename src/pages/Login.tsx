@@ -14,8 +14,8 @@ const Login = () => {
 				<form className='flex justify-center mt-5'>
 					<div className='max-w-[400px] md:min-w-[600px]'>
 						<div className='flex justify-between'>
-							<Link to="/login" className='link-login'>Login</Link>
-						<Link to="/register" className='link-login'>Register</Link>
+							<Link to="/login" className='link-login mr-1'>Login</Link>
+						<Link to="/register" className='link-login  ml-1'>Register</Link>
 						</div>
 						<div className='flex'>
 							<UserPlus className='icon-style-login' />
@@ -23,16 +23,15 @@ const Login = () => {
 						</div>
 						<div className='flex'>
 							<KeyRound className='icon-style-login' />
-							<div className='flex'>
+							<div className='flex w-100'>
 								<input className='input-style-login' type={isShow ? 'text' : 'password'} placeholder='password'></input>
 								<div className='password-show' onClick={() => setIsShow(!isShow)}>
 									{isShow ? <Eye /> : <EyeOff />}
 								</div>
-
 							</div>
 						</div>
 
-						<Button className='sub-button'>Submit</Button>
+						<button className='sub-button'>Submit</button>
 					</div>
 
 				</form>
