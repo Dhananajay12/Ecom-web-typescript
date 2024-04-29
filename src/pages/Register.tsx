@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Eye, EyeOff, KeyRound, UserPlus } from 'lucide-react'
+import { Eye, EyeOff, KeyRound, User, UserPlus } from 'lucide-react'
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -16,30 +16,30 @@ const Register = () => {
 					<Link to="/register" className='link-login  ml-1'>Register</Link>
 				</div>
 				<div className='flex'>
-					<UserPlus className='icon-style-login' />
+					<User strokeWidth={2.2} style={{color:"grey"}} className='icon-style-login' />
 					<input type='text' placeholder='name' className='input-style-login'></input>
 				</div>
 
 				<div className='flex'>
-					<UserPlus className='icon-style-login' />
+					<UserPlus strokeWidth={2.2} style={{ color: "grey" }} className='icon-style-login' />
 					<input type='email' placeholder='email' className='input-style-login'></input>
 				</div>
 				
 				<div className='flex'>
-					<KeyRound className='icon-style-login' />
+					<KeyRound strokeWidth={2.2} style={{ color: "grey" }}  className='icon-style-login' />
 					<div className='flex w-100'>
 						<input className='input-style-login' type={isShow ? 'text' : 'password'} placeholder='password'></input>
 						<div className='password-show' onClick={() => setIsShow(!isShow)}>
-							{isShow ? <Eye /> : <EyeOff />}
+							{isShow ? <Eye strokeWidth={2.2} style={{ color: "grey" }} /> : <EyeOff strokeWidth={2.2} style={{ color: "grey" }} />}
 						</div>
 					</div>
 				</div>
 				<div className='flex'>
-					<KeyRound className='icon-style-login' />
+					<KeyRound strokeWidth={2.2} style={{ color: "grey" }}  className='icon-style-login' />
 					<div className='flex w-100'>
 						<input className='input-style-login' type={isShow ? 'text' : 'password'} placeholder='confirm password'></input>
 						<div className='password-show' onClick={() => setIsShow(!isShow)}>
-							{isShow ? <Eye /> : <EyeOff />}
+							{isShow ? <Eye strokeWidth={2.2} style={{ color: "grey" }} /> : <EyeOff strokeWidth={2.2} style={{ color: "grey" }} />}
 						</div>
 					</div>
 				</div>
