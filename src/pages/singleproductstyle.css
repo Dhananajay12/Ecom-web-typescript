@@ -1,0 +1,43 @@
+.swiper-button-next:after,
+.swiper-button-prev:after {
+	font-size: 15px !important;
+	text-transform: none !important;
+	letter-spacing: 0 !important;
+	color: white !important;
+	background: #121212 !important;
+	text-transform: none !important;
+	font-variant: initial !important;
+	line-height: 1;
+}
+
+
+.swiper-button-prev {
+	padding: 24px !important;
+	color: white !important;
+	background: #121212 !important;
+	font-size: 15px !important;
+	position: absolute !important;
+	left: -0px !important;
+	z-index: 9999;
+	border-radius: 30px;
+}
+
+.swiper-button-disabled {
+	background: #121212 !important;
+	opacity: 0.7 !important
+}
+
+.font-bold {
+	/* font-weight: bold !important; */
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800 !important;
+}
+
+.swiper-button-next {
+	padding: 24px !important;
+	color: white !important;
+	background: #121212 !important;
+	font-size: 15px !important;
+	right: -0px !important;
+	border-radius: 30px;
+}
