@@ -1,8 +1,9 @@
-export interface product {
-	id: number,
+export interface Product {
+	_id: number,
 	name: string,
 	description: string,
-	img: any,
+	feturedImg?: any,
+	gallery: string[],
 	measurements:string,
 	salePrice: number,
 	price: number,

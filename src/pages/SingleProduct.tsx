@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { product } from '../model/productModel';
+import { Product } from '../model/productModel';
 import { productData } from '../data/productData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -16,6 +16,8 @@ import { EffectFade, Navigation, FreeMode, Pagination, Thumbs } from 'swiper/mod
 import { Heart } from 'lucide-react';
 import SliderHome, { StarRating } from '../components/homepage/SliderHome';
 import Review from '../components/reviewComponents/Review';
+import { IProductSingleResponse } from '../model/HomeModel';
+import instance from '../apicall/AuthFunction';
 
 // SwiperCore.use([FreeMode, Navigation, Thumbs, EffectFade, Pagination]);
 
@@ -23,13 +25,24 @@ import Review from '../components/reviewComponents/Review';
 const SingleProduct = () => {
 
 	const { id } = useParams()
-	const [product, setProduct] = useState<product>();
+	const [product, setProduct] = useState<Product>();
 	const [thumbsSwiper, setThumbsSwiper] = useState();
 
+
+	const fetchProduct = async () => {
+
+		await instance.get(`/products/getById/${id}`)
+			.then(({ data }: { data: IProductSingleResponse }) => {
+				if (data.statusCode === 200) setProduct(data.data)
+			})
+			.catch((err: any) => err);
+	};
+
 	useEffect(() => {
-		const data = productData.find((val: product) => val.id === Number(id))
-		if (data) setProduct(data);
-	}, [id])
+		fetchProduct()
+		return () => {
+		};
+	}, []);
 
 	return (
 		<div className='container mx-auto'>
