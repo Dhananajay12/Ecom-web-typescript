@@ -9,3 +9,18 @@ export interface Product {
 	price: number,
 	star: number
 }
+export interface ProductVariant {
+	_id: string,
+	star: 0,
+	productId: number,
+	name: string,
+	sku: string,
+	price: number,
+	salePrice: number,
+	weight: number,
+	length: number,
+	breadth: number,
+	height: number,
+	inStockCount: number,
+	productVariantId: number
+}

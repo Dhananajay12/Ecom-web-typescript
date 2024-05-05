@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Product } from '../model/productModel';
+import { Product, ProductVariant } from '../model/productModel';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode, Thumbs } from 'swiper/modules';
 import { Heart } from 'lucide-react';
@@ -15,13 +15,19 @@ import 'swiper/css/thumbs';
 import 'swiper/swiper-bundle.css';
 import { Skeleton } from '../components/ui/skeleton';
 import './singleproductstyle.css'
+import { add } from '../store/cartSlice';
+import { useDispatch } from 'react-redux';
 // SwiperCore.use([FreeMode, Navigation, Thumbs, EffectFade, Pagination]);
 const SingleProduct = () => {
 
 	const { id } = useParams()
 	const [product, setProduct] = useState<Product>();
+
 	const [thumbsSwiper, setThumbsSwiper] = useState();
 	const [loading, setLoading] = useState(true);
+	const [addText, setAddText] = useState('ADD TO CART')
+	
+	const dispatch = useDispatch();
 
 	const fetchProduct = async () => {
 		await instance.get(`/products/getById/${id}`)
@@ -33,6 +39,23 @@ const SingleProduct = () => {
 			})
 			.catch((err: any) => err);
 	};
+
+	const handleAdd = async () => {
+		setAddText('ADDING...')
+		let items = {
+			...product,
+			quantity: 1,
+			variantName: product?.name,
+			price: product?.salePrice,
+			total: product?.salePrice && product?.salePrice * 1,
+			oldPrice: product?.price
+		}
+		dispatch(add(items))
+		// tostSucess('SuccessFully Item Added')
+		setTimeout(() => {
+			setAddText('ADD TO CART')
+		}, 2000);
+	}
 
 	useEffect(() => {
 		fetchProduct()
@@ -120,9 +143,9 @@ const SingleProduct = () => {
 								<p className='p-1 mx-2 py-2 text-lg'> 1 </p>
 								<p className='p-1 ml-1 py-2 px-4 text-xl bg-[#b5b5b5] rounded' > + </p>
 							</div> */}
-							<div className=' bg-[#121212] text-white px-4 py-2 rounded flex w-[100%] md:w-[100%] text-center justify-center mt-2 md:mx-1'>
-								<p className='text-lg'>ADD TO CART</p>
-							</div>
+							<button onClick={handleAdd} className=' bg-[#121212] text-white px-4 py-2 rounded flex w-[100%] md:w-[100%] pt-3 text-center justify-center mt-2 md:mx-1'>
+								{ addText}
+							</button>
 							<div className='border border-[#121212] px-4 py-2 rounded flex w-[100%] md:w-[100%] text-center justify-center mt-2 md:mx-1'>
 								<Heart size={23} className='mr-1 mt-[3px]' /> <p className='text-lg'>wishlist</p>
 							</div>
