@@ -2,9 +2,14 @@ import React from 'react'
 import StepsForBuy from '../components/cartcomponents/StepsForBuy'
 import img from '../images/bed.png'
 import { BadgePercent } from 'lucide-react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
 
 
 const Cart = () => {
+
+	const { cartItem } = useSelector((state: RootState) => state?.cartReducer);
+
 	return (
 		<>
 
@@ -15,34 +20,33 @@ const Cart = () => {
 				<br></br>
 
 				<div className='grid grid-cols-3 mt-5 md:mt-10'>
+
 					<div className='col-span-3 md:col-span-2 px-4'>
 						<table style={{ width: "100%" }}>
 							<tr className=''>
 								<th>Product</th>
 								<th>Quantity</th>
 								<th>Price</th>
-								<th>Subtotal</th>
+							
 							</tr>
 
 							<br></br>
 							<br></br>
-							<tr className='mt-4'>
-								<td className='flex  justify-center s'>
-									<img src={img} alt="error" className='w-[100px] rounded' />
-								</td>
-								<td><div> - 1 + </div></td>
-								<td>$199</td>
-								<td>$999</td>
-							</tr>
-							<br></br>
-							<tr className='mt-4'>
-								<td className='flex  justify-center s'>
-									<img src={img} alt="error" className='w-[100px]' />
-								</td>
-								<td><div> - 1 + </div></td>
-								<td>$199</td>
-								<td>$999</td>
-							</tr>
+							{cartItem?.length > 0 && cartItem?.map((item:any) => (
+								<>
+									<tr className='mt-4'>
+										<td className='flex  justify-center s'>
+											{item?.gallery?.length > 0 && <img src={item?.gallery[0] } alt="error" className='w-[100px] rounded' />}
+										</td>
+										<td><div> - 1 + </div></td>
+										<td>${item?.salePrice}</td>
+									
+									</tr>
+									<br></br>
+								</>
+							))}
+
+
 						</table>
 					</div>
 					<div className='col-span-3 md:col-span-1   '>
