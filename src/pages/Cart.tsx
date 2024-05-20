@@ -8,7 +8,7 @@ import { RootState } from '../store/store'
 
 const Cart = () => {
 
-	const { cartItem } = useSelector((state: RootState) => state?.cartReducer);
+	const { cartItem , subTotal , total , shipping } = useSelector((state: RootState) => state?.cartReducer);
 
 	return (
 		<>
@@ -65,10 +65,10 @@ const Cart = () => {
 							<div className=' font-bold text-xl '>Cart summary</div>
 							<div className='flex justify-between mt-10'>
 								<p>Subtotal</p>
-								<p>₹1213.00</p></div>
+								<p>₹{subTotal}</p></div>
 							<div className='flex justify-between mt-5'>
 								<p>Shipping Charges</p>
-								<p>₹1213.00</p>
+								<p>₹{shipping}</p>
 							</div>
 							<div className='flex justify-between mt-5 '>
 								<p className='text-green-600'>Discount</p>
@@ -77,7 +77,7 @@ const Cart = () => {
 							<p className='mt-4 border-b border-gray-500'></p>
 							<div className='flex justify-between mt-5'>
 								<p >Total</p>
-								<p>₹213.00</p>
+								<p>₹{total}</p>
 							</div>
 							<button className='bg-[#121212] text-white mt-6 px-10 p-2 w-full rounded' >Checkout</button>
 						</div>
