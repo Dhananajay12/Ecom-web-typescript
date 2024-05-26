@@ -7,7 +7,8 @@ export interface Product {
 	measurements:string,
 	salePrice: number,
 	price: number,
-	star: number
+	star: number,
+	productId:number
 }
 export interface ProductVariant {
 	_id: string,
@@ -18,9 +19,10 @@ export interface ProductVariant {
 	price: number,
 	salePrice: number,
 	weight: number,
+	inStock:boolean,
 	length: number,
 	breadth: number,
 	height: number,
 	inStockCount: number,
-	productVariantId: number
+	productVariantId: number,
 }

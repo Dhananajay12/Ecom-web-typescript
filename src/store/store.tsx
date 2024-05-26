@@ -4,9 +4,11 @@ import cartReducer from './cartSlice';
 
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { productsApi } from "../apicall/ProductApi";
 
 const RootReducers = combineReducers({
 	cartReducer,
+	[productsApi.reducerPath]: productsApi.reducer
 });
 
 const persistConfig = {
@@ -20,6 +22,8 @@ const persistedReducer = persistReducer(persistConfig, RootReducers)
 
 const Store = configureStore({
 	reducer: persistedReducer,
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware().concat(productsApi.middleware),
 });
 
 export const PStore = persistStore(Store);

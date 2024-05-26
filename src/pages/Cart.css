@@ -1,0 +1,12 @@
+.increase-decrease-button-style{
+
+   border: 1px solid grey;
+   height: 2rem;
+	 width: 6rem;
+	 text-align: center;
+   align-items: center;
+	 display: flex;
+	 justify-content: space-between;
+	 border-radius: 10px;
+
+}

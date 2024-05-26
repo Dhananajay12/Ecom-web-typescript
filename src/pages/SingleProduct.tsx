@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Product, ProductVariant } from '../model/productModel';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode, Thumbs } from 'swiper/modules';
 import { Heart } from 'lucide-react';
@@ -15,46 +14,52 @@ import 'swiper/css/thumbs';
 import 'swiper/swiper-bundle.css';
 import { Skeleton } from '../components/ui/skeleton';
 import './singleproductstyle.css'
-import { add } from '../store/cartSlice';
-import { useDispatch } from 'react-redux';
+import { add, getTotals } from '../store/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useGetProductsByIdQuery } from '../apicall/ProductApi';
+import { RootState } from '../store/store';
 // SwiperCore.use([FreeMode, Navigation, Thumbs, EffectFade, Pagination]);
 const SingleProduct = () => {
 
 	const { id } = useParams()
-	const [product, setProduct] = useState<Product>();
+	// const [product, setProduct] = useState<Product>();
+
+	const { data: { data: product } = {}, isLoading:loading } = useGetProductsByIdQuery(id ? id:"")  
+	const { cartItem, } = useSelector((state: RootState) => state?.cartReducer);
 
 	const [thumbsSwiper, setThumbsSwiper] = useState();
-	const [loading, setLoading] = useState(true);
+	// const [loading, setLoading] = useState(true);
 	const [addText, setAddText] = useState('ADD TO CART')
 	
 	const dispatch = useDispatch();
 
 	const fetchProduct = async () => {
 		await instance.get(`/products/getById/${id}`)
-			.then(({ data }: { data: IProductSingleResponse }) => {
+			.then( async ({ data }: { data: IProductSingleResponse }) => {
 				if (data.statusCode === 200) {
-					setProduct(data.data)
-					setLoading(false)
+					// setProduct(data.data)
+					// setLoading(false)
 				}
 			})
 			.catch((err: any) => err);
 	};
+
 
 	const handleAdd = async () => {
 		setAddText('ADDING...')
 		let items = {
 			...product,
 			quantity: 1,
-			variantName: product?.name,
+			name: product?.name,
 			price: product?.salePrice,
 			total: product?.salePrice && product?.salePrice * 1,
 			oldPrice: product?.price
 		}
 		dispatch(add(items))
-		// tostSucess('SuccessFully Item Added')
 		setTimeout(() => {
 			setAddText('ADD TO CART')
 		}, 2000);
+
 	}
 
 	useEffect(() => {
@@ -63,6 +68,10 @@ const SingleProduct = () => {
 		return () => {
 		};
 	}, []);
+
+	useEffect(() => {
+		dispatch(getTotals({ shippingCharges: 39 }));
+	}, [cartItem])
 
 	return (
 		<div className='container mx-auto'>

@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import StepsForBuy from '../components/cartcomponents/StepsForBuy'
 import img from '../images/bed.png'
-import { BadgePercent } from 'lucide-react'
-import { useSelector } from 'react-redux'
+import { BadgePercent, Trash2 } from 'lucide-react'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../store/store'
-
+import { add, decrease, getTotals, remove } from '../store/cartSlice'
+import { Product } from '../model/ProductModel'
+import './Cart.css'
 
 const Cart = () => {
 
-	const { cartItem , subTotal , total , shipping } = useSelector((state: RootState) => state?.cartReducer);
+	const { cartItem, subTotal, total, shipping } = useSelector((state: RootState) => state?.cartReducer);
+
+	const dispatch = useDispatch();
+	
+	const handleDecrease = (product: any) => {
+		dispatch(decrease(product));
+	};
+
+	const handleAdd = (product:any) => {
+		let items = {
+			...product,
+			quantity: 1,
+		};
+		dispatch(add(items))
+	}
+	const handleRemove = (product: any) => {
+		dispatch(remove(product))
+	}
+
+	useEffect(() => {
+		dispatch(getTotals({ shippingCharges: 39 }));
+
+	}, [cartItem])
 
 	return (
 		<>
 
-			<div className='container text-center mx-auto mt-10'>
+			<div className='container  mx-auto mt-10'>
 				<p className='text-3xl font-bold'>Cart</p>
 				<StepsForBuy />
 				<br></br>
@@ -22,32 +46,72 @@ const Cart = () => {
 				<div className='grid grid-cols-3 mt-5 md:mt-10'>
 
 					<div className='col-span-3 md:col-span-2 px-4'>
-						<table style={{ width: "100%" }}>
+
+
+
+						
+							{cartItem?.length > 0 && cartItem?.map((item: any) => (
+								<>
+									<div className='grid grid-cols-12'>
+										<div className='col-span-12 mt-2  md:col-span-9 flex '>
+											{item?.gallery?.length > 0 && <img src={item?.gallery[0]} alt="error" className='w-[100px] rounded' />}
+											<div className='mx-5'>
+												<p className='flex justify-start font-bold'>{item.name}</p>
+												<p className='text-[16px] mt-1'>{item.description?.slice(0,50) + '...'} </p>
+											</div>
+										</div>
+										<div className='col-span-12 mt-5 md:col-span-3 flex justify-between'>
+											<div className=' mt-1'>${item?.salePrice}</div>
+
+											<div className=' increase-decrease-button-style py-4'>
+												<button onClick={() => handleDecrease(item)} className='mx-3 text-[20px]  text-[#7a7a7a] border-none'> - </button>
+												<span className='text-[18px]'>
+													{item.quantity}
+												</span>
+												<button onClick={() => handleAdd(item)} className='mx-3 text-[20px]  text-[#7a7a7a] border-none' >+</button>
+											</div>
+											<div className=' md:col-span-1 mt-1'>
+												<button onClick={() => handleRemove(item)}><Trash2 strokeWidth={0.75} /></button>
+											</div>
+										</div>
+								
+									</div>
+									<br></br>
+								</>
+							))} 
+
+
+				
+						{/* <table style={{ width: "100%" }}>
 							<tr className=''>
 								<th>Product</th>
 								<th>Quantity</th>
 								<th>Price</th>
-							
+
 							</tr>
 
 							<br></br>
 							<br></br>
-							{cartItem?.length > 0 && cartItem?.map((item:any) => (
+							{cartItem?.length > 0 && cartItem?.map((item: any) => (
 								<>
 									<tr className='mt-4'>
 										<td className='flex  justify-center s'>
-											{item?.gallery?.length > 0 && <img src={item?.gallery[0] } alt="error" className='w-[100px] rounded' />}
+											{item?.gallery?.length > 0 && <img src={item?.gallery[0]} alt="error" className='w-[100px] rounded' />}
 										</td>
-										<td><div> - 1 + </div></td>
+										<td><div> 
+											<button onClick={() => handleDecrease(item)}> - </button>
+											{item.quantity} 
+											<button onClick={() => handleAdd(item)}></button>
+											 </div></td>
 										<td>${item?.salePrice}</td>
-									
+
 									</tr>
 									<br></br>
 								</>
 							))}
 
 
-						</table>
+						</table> */}
 					</div>
 					<div className='col-span-3 md:col-span-1   '>
 						<div className='mt-10 md:mt-0'>

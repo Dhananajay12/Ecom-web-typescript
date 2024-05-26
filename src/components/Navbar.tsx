@@ -1,9 +1,14 @@
+
 import { CircleUserRound, Search, ShoppingCart } from 'lucide-react'
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { RootState } from '../store/store';
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const { quantity } = useSelector((state: RootState) => state?.cartReducer);
 
 	const toggleNavbar = () => {
 		setIsOpen(!isOpen);
@@ -31,8 +36,9 @@ const Navbar = () => {
 
 				<div className='flex'>
 					<Search size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
-					<NavLink to="/cart" >
+					<NavLink to="/cart" className='flex'>
 						<ShoppingCart size={28} strokeWidth={1.5} className='mr-4 text-[#3d3d3d]' />
+						{quantity > 0 &&<span className='item-count-cart'>{quantity}</span>}
 					</NavLink>
 					<NavLink to="/login" >
 						<CircleUserRound size={28} strokeWidth={1.5} className='text-[#3d3d3d]' />
