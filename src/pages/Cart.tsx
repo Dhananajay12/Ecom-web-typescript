@@ -38,8 +38,10 @@ const Cart = () => {
 		<>
 
 			<div className='container  mx-auto mt-10'>
+				<div className='text-center'>
 				<p className='text-3xl font-bold'>Cart</p>
 				<StepsForBuy />
+				</div>
 				<br></br>
 				<br></br>
 
